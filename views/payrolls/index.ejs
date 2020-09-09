@@ -1,0 +1,36 @@
+<%-include('../partials/header')%>
+<section class="container">
+  <div class="row">
+    <div class="col col-lg-4">
+      <form method="post" action="/export" class="my-4">
+        <div class="form-group">
+          <label for="payday">Payday:</label>
+          <input type="date" class="form-control rounded-0" id="payday" name="payday" aria-describedby="paydayHelp">
+          <small id="paydayHelp" class="form-text text-muted text-center">Day to process the deposit</small>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 rounded-0">Export</button>
+      </form>
+    </div>
+    <div class="col col-lg-8">
+      <table class="table table-responsive-lg">
+        <thead>
+          <tr>
+            <th>Id card</th>
+            <th>Account</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%employees.forEach(employee=>{%>
+          <tr>
+            <td><%=employee.idcard%></td>
+            <td><%=employee.account%></td>
+            <td><%=employee.amount%></td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<%-include('../partials/footer')%>

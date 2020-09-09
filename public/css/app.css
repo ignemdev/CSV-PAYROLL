@@ -1,0 +1,11 @@
+* {
+	font-family: 'Inter', sans-serif;
+}
+
+.i-lg {
+	font-size: 15em;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
